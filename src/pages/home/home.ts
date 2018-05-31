@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import {ModalController, NavController} from 'ionic-angular';
+import {AlertController, ModalController, NavController} from 'ionic-angular';
+import {NavPage} from "../nav/nav";
+
 import {Profile} from "../../interfaces/Profile";
+import {Account} from "../../interfaces/Account";
 
 @Component({
   selector: 'page-home',
@@ -8,9 +11,11 @@ import {Profile} from "../../interfaces/Profile";
 })
 export class HomePage {
   public profile = {} as Profile;
+  private accountData = {} as Account;
 
   constructor(public navCtrl: NavController,
-              public modalCtrl: ModalController) {
+              public modalCtrl: ModalController,
+              public alertCtrl: AlertController) {
 
   }
 
@@ -31,4 +36,39 @@ export class HomePage {
     modal.present();
   }
 
+  //Prompt Alert
+  showPrompt() {
+    let prompt = this.alertCtrl.create({
+      title: 'Login',
+      message: "이름과 E메일을 입력하세요!",
+      inputs: [
+        {
+          name: 'name',
+          placeholder: '이름 입력'
+        },
+        {
+          name: 'email',
+          placeholder: 'E메일 입력'
+        },
+      ],
+      buttons: [
+        {
+          text: '취소',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: '저장',
+          handler: data => {
+            console.log(data);
+            this.accountData = {name:data.name,email:data.email};
+            this.navCtrl.push('NavPage',{account:this.accountData});
+
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
 }
