@@ -19,7 +19,8 @@
 <ion-content padding>
   <ion-list>
     <ion-list-header>Products sorted by name</ion-list-header>
-    <ion-item *ngFor="let product of productObservable| async">
+    <ion-item *ngFor="let product of productObservable| async | orderBy:'name'"
+    (click)="navToDetail(product)">
       <h2>{{product.name}}</h2>
       <p>{{product.cost| currency : 'KRW' }}</p>
     </ion-item>

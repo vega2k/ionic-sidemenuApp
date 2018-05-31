@@ -4,6 +4,7 @@ import {Observable} from "rxjs/Observable";
 
 import {Product} from "../../interfaces/Product";
 import {RestProvider} from "../../providers/rest/rest";
+import {ProductDetailPage} from "../product-detail/product-detail";
 
 /**
  * Generated class for the ProductListPage page.
@@ -29,4 +30,7 @@ export class ProductListPage {
     this.productObservable = this.restProvider.getProducts();
   }
 
+  navToDetail(product:Product) {
+    this.navCtrl.push('ProductDetailPage',{"myProduct":product});
+  }
 }
