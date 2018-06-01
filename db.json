@@ -25,16 +25,10 @@
       "quantity": 5
     },
     {
-      "id": 5,
-      "name": "Bag",
-      "cost": 100,
-      "quantity": 50
-    },
-    {
-      "name": "TESt",
-      "cost": "100",
-      "quantity": "10",
-      "id": 6
+      "name": "bb",
+      "cost": "111",
+      "quantity": "12",
+      "id": 8
     }
   ]
 }
