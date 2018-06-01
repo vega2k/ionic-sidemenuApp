@@ -2,5 +2,7 @@
   "name": "ionic-sidemenuApp",
   "app_id": "a07bf816",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
