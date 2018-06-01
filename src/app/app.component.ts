@@ -1,13 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component, ViewChild} from '@angular/core';
+import {Nav, Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import {ActionSheetPage} from "../pages/action-sheet/action-sheet";
-import {SlidePage} from "../pages/slide/slide";
-import {ProductListPage} from "../pages/product-list/product-list";
+import {HomePage} from '../pages/home/home';
+import {ListPage} from '../pages/list/list';
 
 @Component({
   templateUrl: 'app.html'

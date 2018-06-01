@@ -32,5 +32,11 @@ export class RestProvider {
         return Observable.empty<Product[]>();
       });
   }
+  //Product 등록
+  public createProduct(product:Product):Observable<Product> {
+    return this.http.post(this.baseUrl +"/products",product)
+      .map(resp => new Product(resp))
+      .catch(err => Observable.empty<Product>());
+  }
 
 }
